@@ -43,10 +43,6 @@
             margin-left: 1rem;
         }
 
-<!--        a:hover {-->
-<!--            color: orange;-->
-<!--        }-->
-
         header {
             position: relative;
             padding: 0 2rem;
@@ -63,7 +59,7 @@
         }
 
         .navbar .logo a{
-            font-size; 1.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
         }
 
@@ -101,12 +97,40 @@
             scale: 0.95;
         }
 
-        .Content {
-            padding: 5rem;
+        .content-demo {
+            margin: 10px;
             display: grid;
-            border-style: solid;
             grid-template-columns: auto auto auto;
-
+            column-gap: 100px;
+            row-gap: 30px;
+            justify-content: center;
+            background-color: red;
+        }
+        .Content{
+            margin: 20px;
+            border: solid;
+        }
+        .demo2
+        {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin: 20px;
+        }
+        #img-section
+        {
+            margin: 5px;
+            border: solid;
+            width: 100px;
+            height: 120px;
+        }
+        #user-data p
+        {
+            font-size: 16px;
+        }
+        #user-data
+        {
+            position: relative;
+            top: 10%;
         }
     </style>
     <header>
@@ -123,15 +147,22 @@
                 </div>
             </div>
     </header>
+    <div class="content-demo">
     {% for i in data %}
-    <div class="Content">
-        <p>{{i.name}}</p>
-        <p>{{i.age}}</p>
-        <p>{{i.location}}</p>
-        <p>{{i.verified}}</p>
-        <p>{{i.phone}}</p>
-    </div>
+        <div class="Content">
+                <div class="demo2">
+                    <div id="img-section"></div>
+                    <div id="user-data">
+                        <p>Name : {{i.name}}</p>
+                        <p>Age : {{i.age}}</p>
+                        <p>Location : {{i.location}}</p>
+                        <p>Verified : {{i.verified}}</p>
+                        <p>Phone : {{i.phone}}</p>
+                    </div>
+                </div>
+        </div>
     {% endfor %}
+    </div>
 
 
 </body>
